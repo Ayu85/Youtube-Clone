@@ -3,7 +3,7 @@ import Header from './Header'
 const Body = () => {
   return (
     <div>
-      <Header/>
+        {/* sidebar and maincontainer */}
     </div>
   )
 }

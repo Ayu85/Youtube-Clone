@@ -10,7 +10,7 @@ const Header = () => {
     const isClicked = useSelector(store => store.slice.value)
     // console.log(isClicked);
     return (
-        <div className='flex   justify-between py-4 px-3'>
+        <div className='flex   justify-between py-4 px-3 shadow-slate-100  shadow-lg'>
             <div className='flex gap-2 items-center  '>
                 <GiHamburgerMenu className='text-3xl cursor-pointer hover:bg-slate-300 hover:rounded-full transition-all ' onClick={() => {
                     !isClicked ? dispatch(setValue(true)) : dispatch(setValue(false))

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { VIDEO_API } from '../utils/constants'
-
+import VideoCard from './VideoCard'
 const MainContent = () => {
     const isSideOpen = useSelector(store => store.slice.value)
     const [videos, setVideos] = useState([])
@@ -25,9 +25,13 @@ const MainContent = () => {
                 <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>Watched</button>
                 <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>Recently Uploaded</button>
             </div>
-            <div>
+            <div className='flex flex-wrap gap-2 items-center justify-start pt-5  pl-3'>
                 {/* video container */}
-
+                {
+                    videos.map((items)=>{
+                        return <VideoCard {...items}/>
+                    })
+                }
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ import { SiYoutubeshorts } from "react-icons/si";
 import { FaHistory } from "react-icons/fa";
 const SideBar = () => {
     return (
-        <div className='w-72 pt-3'>
+        <div className='w-72 pt-3 hidden lg:block'>
             <div className='list-none  font-semibold pl-3 tracking-wide text-lg border-b border-slate-300'>
                 <li className='flex mb-3 items-center gap-3'><IoIosHome className='text-3xl' />Home</li>
                 <li className='flex mb-3 items-center gap-3'> <SiYoutubeshorts className='text-3xl' />Shorts</li>

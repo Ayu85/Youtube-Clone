@@ -1,11 +1,12 @@
 import React from 'react'
-import Header from './Header'
+import MainContent from './MainContent'
 import SideBar from './SIdeBar'
 const Body = () => {
   return (
-    <div>
-        {/* sidebar and maincontainer */}
-        <SideBar/>
+    <div className='flex gap-10'>
+      {/* sidebar and maincontainer */}
+      <SideBar />
+      <MainContent />
     </div>
   )
 }

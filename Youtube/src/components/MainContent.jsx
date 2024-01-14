@@ -15,7 +15,7 @@ const MainContent = () => {
     }, [])
     console.log(videos);
     return (
-        <div className=' w-[100%]' style={!isSideOpen ? { translate: "0px", transition: "all .3s ease-in-out ", width: "6000px" } : { transition: "all .3s ease-in-out " }}>
+        <div className=' w-[100%]' >
             <div className='font-semibold'>
                 {/* button list */}
                 <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>All</button>

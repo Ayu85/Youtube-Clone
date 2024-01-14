@@ -16,7 +16,7 @@ const SideBar = () => {
     const isClicked = useSelector(store => store.slice.value)
     console.log(isClicked);
     return (
-        <div className='w-72 pt-3 hidden lg:block overflow-y-scroll h-[100vh] scroll-smooth  ' style={!isClicked ? { translate: "-265px", transition: ".3s all ease-in-out" } : { transition: ".3s all ease-in-out" }}>
+        <div className='w-72 pt-3  overflow-y-scroll h-[100vh] scroll-smooth  ' style={!isClicked ? { translate: "-265px", transition: ".3s all ease-in-out" } : { transition: ".3s all ease-in-out" }}>
             <div className='list-none  font-semibold pl-3 tracking-wide text-lg border-b border-slate-300'>
                 <li className='flex mb-3 items-center gap-3'><IoIosHome className='text-3xl text-zinc-700' />Home</li>
                 <li className='flex mb-3 items-center gap-3'> <SiYoutubeshorts className='text-3xl text-zinc-700' />Shorts</li>

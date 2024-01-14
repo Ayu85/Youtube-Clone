@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const HamburgerSlice = createSlice({
     name: "hamburger",
     initialState: {
-        value: false
+        value: true
     },
     reducers: {
         setValue: (state, action) => {

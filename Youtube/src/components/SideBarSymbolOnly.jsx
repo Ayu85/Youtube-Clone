@@ -14,19 +14,19 @@ import { IoGameController } from "react-icons/io5";
 import { SiStudyverse } from "react-icons/si";
 const SideBarSymbolOnly = () => {
     return (
-        <div className='flex flex-col w-48 gap-6 h-auto pl-3 pt-3'>
-            <IoIosHome className='text-4xl text-zinc-700' />
-            <SiYoutubeshorts className='text-4xl text-zinc-700' />
-            <MdSubscriptions className='text-4xl text-zinc-700' />
-            <MdFeaturedPlayList className='text-4xl text-zinc-7' />
-            <FaHistory className='text-4xl text-zinc-700' />
-            <FaFire className='text-4xl text-zinc-700' />
-            <FaBagShopping className='text-4xl text-zinc-700' />
-            <SiYoutubemusic className='text-4xl text-zinc-700'/>
-            <RiMovie2Fill className='text-4xl text-zinc-700' />
-            <IoGameController className='text-4xl text-zinc-700'/>
-            <MdSportsCricket className='text-4xl text-zinc-700'/>
-            <SiStudyverse className = 'text-4xl text-zinc-700' />
+        <div className='flex flex-col w-48 gap-3  h-auto pl-2 pt-3 transition-all '>
+            <IoIosHome className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3 ' />
+            <SiYoutubeshorts className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
+            <MdSubscriptions className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
+            <MdFeaturedPlayList className='text-5xl text-zinc-7 cursor-pointer border-b border-slate-300 pb-3' />
+            <FaHistory className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
+            <FaFire className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
+            <FaBagShopping className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
+            <SiYoutubemusic className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3'/>
+            <RiMovie2Fill className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
+            <IoGameController className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3'/>
+            <MdSportsCricket className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3'/>
+            <SiStudyverse className = 'text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
      </div >
     )
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { VIDEO_API } from '../utils/constants'
 import VideoCard from './VideoCard'
+import { Link } from 'react-router-dom'
 const MainContent = () => {
     const isSideOpen = useSelector(store => store.slice.value)
     const [videos, setVideos] = useState([])
@@ -28,8 +29,8 @@ const MainContent = () => {
             <div className='flex flex-wrap gap-6 items-center justify-start pt-5  pl-3 overflow-y-scroll h-auto'>
                 {/* video container */}
                 {
-                    videos.map((items)=>{
-                        return <VideoCard {...items}/>
+                    videos.map((items) => {
+                        return <Link to={"/watch?v=" + items.id}><VideoCard {...items} /></Link >
                     })
                 }
             </div>

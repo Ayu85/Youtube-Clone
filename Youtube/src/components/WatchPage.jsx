@@ -5,10 +5,12 @@ import { API_KEY } from '../utils/constants';
 import { FaCircleCheck } from "react-icons/fa6";
 import { AiTwotoneLike } from "react-icons/ai";
 import { PiShareFatDuotone } from "react-icons/pi";
-
+import { VIDEO_API } from '../utils/constants';
+import sideDisplayVideos_watchpage from './sideDisplayVideos_watchpage';
 const WatchPage = () => {
   const [SearchVideoId] = useSearchParams();
   const [currentVideoData, setData] = useState([])
+  const [sideDisplayVideos, setDisplayVideos] = useState([])
   const videoId = SearchVideoId.get('v');
   useEffect(() => {
     const getVideoData = async () => {
@@ -18,6 +20,14 @@ const WatchPage = () => {
       setData(json?.items[0])
     }
     getVideoData();
+  }, [])
+  useEffect(() => {
+    const getVideoData = async () => {
+      const raw = await fetch(VIDEO_API);
+      const json = await raw.json();
+      setDisplayVideos(json?.items)
+    }
+    getVideoData()
   }, [])
   return (
     <div className='flex '>
@@ -45,6 +55,13 @@ const WatchPage = () => {
               Share</button>
           </div>
         </div>
+      </div>
+      <div className='flex flex-col gap-3'>
+        {
+            sideDisplayVideos.map((items)=>{
+              
+            })
+        }
       </div>
     </div>
   )

@@ -26,7 +26,7 @@ const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
                         setViewMore(false)
                     }
 
-                }}>...view more</button>
+                }}>{isViewMore ? '...view less' : '...view more'}</button>
             </div>
             <h1>{snippet?.description?.substring(0, 100)}</h1>
             {<div>

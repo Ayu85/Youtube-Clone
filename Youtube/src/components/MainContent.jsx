@@ -34,6 +34,7 @@ const MainContent = () => {
                     })
                 }
             </div>
+            
         </div>
     )
 }

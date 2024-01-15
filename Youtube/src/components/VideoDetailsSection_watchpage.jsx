@@ -30,7 +30,7 @@ const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
             </div>
             <h1>{snippet?.description?.substring(0, 100)}</h1>
             {<div>
-                {snippet?.tags.map((tag) => {
+                {snippet?.tags?.map((tag) => {
                     return <h1>#{tag}</h1>
                 })}
             </div>}

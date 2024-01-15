@@ -11,7 +11,7 @@ const Header = () => {
     // console.log(isClicked);
     return (
         <div className='flex   justify-between py-4 px-3 shadow-slate-100  shadow-lg'>
-            <div className='flex gap-2 items-center  '>
+            <div className='flex gap-2 items-center pl-2 '>
                 <GiHamburgerMenu className='text-3xl cursor-pointer hover:bg-slate-300 hover:rounded-full transition-all ' onClick={() => {
                     !isClicked ? dispatch(setValue(true)) : dispatch(setValue(false))
                 }} />

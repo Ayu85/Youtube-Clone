@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import SideBarSymbolOnly from './sideBarSymbolOnly';
 import { API_KEY } from '../utils/constants';
 import { FaCircleCheck } from "react-icons/fa6";
 import { AiTwotoneLike } from "react-icons/ai";
 import { PiShareFatDuotone } from "react-icons/pi";
 import { VIDEO_API } from '../utils/constants';
-import sideDisplayVideos_watchpage from './sideDisplayVideos_watchpage';
+import SideDisplayVideos_watchpage from './sideDisplayVideos_watchpage';
+// import { Link } from 'react-router-dom';
 const WatchPage = () => {
   const [SearchVideoId] = useSearchParams();
   const [currentVideoData, setData] = useState([])
@@ -22,13 +23,14 @@ const WatchPage = () => {
     getVideoData();
   }, [])
   useEffect(() => {
-    const getVideoData = async () => {
+    const getVideoData2 = async () => {
       const raw = await fetch(VIDEO_API);
       const json = await raw.json();
       setDisplayVideos(json?.items)
     }
-    getVideoData()
+    getVideoData2()
   }, [])
+  console.log("display", sideDisplayVideos);
   return (
     <div className='flex '>
       <SideBarSymbolOnly />
@@ -37,12 +39,12 @@ const WatchPage = () => {
           src={"https://www.youtube.com/embed/" + videoId}
           title="Video Player"
           frameborder="0"
-          className='rounded-xl lg:h-[460px] lg:w-[900px]  md:w-[700px] md:h-[420px] p-3 sm:w-[500px] sm:h-[300px]'
+          className='rounded-xl lg:h-[460px] lg:w-[800px]  md:w-[700px] md:h-[420px] p-3 sm:w-[500px] sm:h-[300px]'
           allow="accelerometer; autoplay; clipboard-write; encrypted-media
            ; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
-        <h1 className='text-2xl p-1 font-semibold  lg:w-[900px]  md:w-[700px]   sm:w-[500px]'>{currentVideoData?.snippet?.title}</h1>
-        <div className='flex justify-between items-center  lg:w-[900px]  md:w-[700px]  p-3 sm:w-[500px] '>
+        <h1 className='text-2xl p-1 font-semibold  lg:w-[800px]  md:w-[700px]   sm:w-[500px]'>{currentVideoData?.snippet?.title}</h1>
+        <div className='flex justify-between items-center  lg:w-[800px]  md:w-[700px]  p-3 sm:w-[500px] '>
           <div className='flex flex-col'> <h2 className='flex items-center gap-1 text-xl font-bold'><FaCircleCheck />
             {currentVideoData?.snippet?.channelTitle}
           </h2>
@@ -56,11 +58,11 @@ const WatchPage = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col gap-3'>
+      <div className=' flex-col gap-6 w-[380px] ml-10 pt-10 hidden lg:flex'>
         {
-            sideDisplayVideos.map((items)=>{
-              
-            })
+          sideDisplayVideos.map((items) => {
+            return <Link to={"/watch?v=" + items.id}><SideDisplayVideos_watchpage {...items} /></Link>
+          })
         }
       </div>
     </div>

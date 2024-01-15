@@ -14,7 +14,7 @@ const MainContent = () => {
         }
         getVideoData()
     }, [])
-    console.log(videos);
+    // console.log(videos);
     return (
         <div className=' w-[100%]' >
             <div className='font-semibold'>

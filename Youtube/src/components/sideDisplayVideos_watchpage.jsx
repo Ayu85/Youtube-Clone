@@ -2,7 +2,7 @@ import React from 'react'
 import { FaCircleCheck } from "react-icons/fa6";
 const SideDisplayVideos_watchpage = ({ snippet, statistics, contentDetails }) => {
     return (
-        <div className='flex justify-between items-center h-28'>
+        <div className='flex justify-between items-center h-28 '>
             <div>
                 <img src={snippet?.thumbnails?.standard?.url}   className=' h-28 w-52  md:rounded-none rounded-xl' alt="" />
             </div>

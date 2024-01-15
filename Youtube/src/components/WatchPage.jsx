@@ -59,7 +59,7 @@ const WatchPage = () => {
             </div>
           </div>
         </div>
-        <div className='bg-slate-100 rounded-xl lg:h-[460px] lg:w-[800px]  md:w-[700px] md:h-[420px] p-3 sm:w-[500px] sm:h-[300px]'>
+        <div className=' rounded-xl lg:h-[460px] lg:w-[800px]  md:w-[700px] md:h-[420px] p-3 sm:w-[500px] sm:h-[300px]'>
           <VideoDetailsSection_watchpage {...currentVideoData} />
         </div>
       </div>

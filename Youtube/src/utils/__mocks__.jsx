@@ -3948,7 +3948,11 @@ export const COMMENTS = [
                 comment: "This is reply ",
                 replies: [
                     {
+                        name: "ANjali reply",
+                        comment: "nested reply",
+                        replies: [
 
+                        ]
                     }
                 ]
             },
@@ -3960,7 +3964,8 @@ export const COMMENTS = [
         comment: "This site is made by Aayush Singh.....With Love",
         replies: [
             {
-
+                name: "Anjali reply",
+                comment: "this is nested reply"
             }
         ]
     },
@@ -3969,6 +3974,8 @@ export const COMMENTS = [
         comment: "This site is made by Aayush Singh.....With Love",
         replies: [
             {
+                name:"Akshay",
+                comment:"Nested reply"
 
             }
         ]

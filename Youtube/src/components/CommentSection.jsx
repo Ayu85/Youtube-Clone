@@ -19,9 +19,18 @@ const CommentSection = () => {
                 <h1 className='pl-5 text-2xl flex items-center gap-6' >
                     <BiLike />
                     <BiDislike />
-
-
                 </h1>
+                <div>
+                    {com.replies?.map((c) => {
+                        return <div className='ml-10 pl-3 border-l border-black'> <h1 className='flex items-center gap-2 font-semibold'><FaUserLarge />
+                            {c?.name}</h1>
+                            <h1 className='pl-5'>{c?.comment}</h1>
+                            <h1 className='pl-5 text-2xl flex items-center gap-6' >
+                                <BiLike />
+                                <BiDislike />
+                            </h1></div>
+                    })}
+                </div>
             </div>
         })
     )

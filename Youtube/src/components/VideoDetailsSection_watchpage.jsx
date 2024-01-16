@@ -7,7 +7,7 @@ const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
     console.log();
     return (
         <>
-            <div className='h-[100px] overflow-hidden bg-slate-100 px-4 py-3 rounded-xl' id='about'>
+            <div className=' hover:bg-slate-200 cursor-pointer h-[100px] overflow-hidden bg-slate-100 px-4 py-3 rounded-xl' id='about'>
                 <div className='flex gap-3 font-semibold justify-between'>
                     <h1>{statistics?.viewCount} Views</h1>
                     <h1 className='flex items-center gap-1'>{date.toDateString(snippet?.publishedAt)}<MdDateRange />
@@ -41,10 +41,10 @@ const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
             </div>
             <div >
                 <h1 className='text-xl font-bold pl-3 py-3'>Comments : </h1>
-                <CommentSection/>
+                <CommentSection />
             </div>
-            
-            </>
+
+        </>
     )
 }
 

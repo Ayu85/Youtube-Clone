@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { VIDEO_API } from '../utils/constants'
 import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'
+import { allVideos } from '../utils/__mocks__'
 const MainContent = () => {
     const isSideOpen = useSelector(store => store.slice.value)
     const [videos, setVideos] = useState([])
@@ -10,11 +11,12 @@ const MainContent = () => {
         const getVideoData = async () => {
             const raw = await fetch(VIDEO_API);
             const json = await raw.json();
-            setVideos(json?.items)
+            setVideos(allVideos?.items)
         }
-        getVideoData()
+        // getVideoData()
+        setVideos(allVideos)
     }, [])
-    // console.log(videos);
+   console.log(videos);
     return (
         <div className=' w-[100%]' >
             <div className='font-semibold'>

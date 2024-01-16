@@ -31,7 +31,7 @@ const WatchPage = () => {
     }
     getVideoData2()
   }, [])
-  console.log("display", sideDisplayVideos);
+  // console.log("display", sideDisplayVideos);
   return (
     <div className='flex '>
       <SideBarSymbolOnly />
@@ -65,7 +65,7 @@ const WatchPage = () => {
       </div>
       <div className=' flex-col gap-6 w-[380px] ml-10 pt-10 hidden lg:flex'>
         {
-          sideDisplayVideos.map((items) => {
+          sideDisplayVideos?.map((items) => {
             return <Link to={"/watch?v=" + items.id}><SideDisplayVideos_watchpage {...items} /></Link>
           })
         }

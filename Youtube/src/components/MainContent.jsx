@@ -29,7 +29,7 @@ const MainContent = () => {
             <div className='flex flex-wrap gap-6 items-center justify-start pt-5  pl-3 overflow-y-scroll h-auto'>
                 {/* video container */}
                 {
-                    videos.map((items) => {
+                    videos?.map((items) => {
                         return <Link to={"/watch?v=" + items.id}><VideoCard {...items} /></Link >
                     })
                 }

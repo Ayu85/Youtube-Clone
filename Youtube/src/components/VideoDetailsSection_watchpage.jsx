@@ -29,7 +29,7 @@ const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
                 }}>{isViewMore ? '...view less' : '...view more'}</button>
             </div>
             <h1>{snippet?.description?.substring(0, 100)}</h1>
-            {<div>
+            {<div className='text-blue-600 font-semibold mt-5 '>
                 {snippet?.tags?.map((tag) => {
                     return <h1>#{tag}</h1>
                 })}

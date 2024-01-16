@@ -3938,3 +3938,48 @@ export const allVideos = [
         }
     }
 ]
+export const COMMENTS = [
+    {
+        name: "@Aayush",
+        comment: "This site is made by Aayush Singh.....With Love",
+        replies: [
+            {
+                name: "Anjali",
+                comment: "This is reply ",
+                replies: [
+                    {
+
+                    }
+                ]
+            },
+
+        ]
+    },
+    {
+        name: "@Aayush2",
+        comment: "This site is made by Aayush Singh.....With Love",
+        replies: [
+            {
+
+            }
+        ]
+    },
+    {
+        name: "@Aayush3",
+        comment: "This site is made by Aayush Singh.....With Love",
+        replies: [
+            {
+
+            }
+        ]
+    },
+    {
+        name: "@Aayush4",
+        comment: "This site is made by Aayush Singh.....With Love",
+        replies: [
+            {
+
+            }
+        ]
+    }
+]

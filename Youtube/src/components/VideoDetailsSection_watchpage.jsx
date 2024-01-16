@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { MdDateRange } from "react-icons/md";
+import CommentSection from './CommentSection';
 const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
     const [isViewMore, setViewMore] = useState(false)
     const date = new Date();
@@ -40,6 +41,7 @@ const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
             </div>
             <div >
                 <h1 className='text-xl font-bold pl-3 py-3'>Comments : </h1>
+                <CommentSection/>
             </div>
             
             </>

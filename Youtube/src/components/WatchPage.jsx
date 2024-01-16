@@ -67,7 +67,6 @@ const WatchPage = () => {
           <VideoDetailsSection_watchpage {...currentVideoData} />
         </div>
         {/* COMMENT SECTION */}
-     
       </div>
 
       {/* SIDE DISPLAY VIDEOS */}

@@ -31,7 +31,7 @@ const WatchPage = () => {
     }
     getVideoData2()
   }, [])
-  // console.log("display", sideDisplayVideos);
+//  console.log("display", sideDisplayVideos);
   return (
     <div className='flex '>
       <SideBarSymbolOnly />

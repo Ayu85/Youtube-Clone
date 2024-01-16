@@ -1,6 +1,7 @@
 import React from 'react'
 import { ISO8601toDuration } from '../utils/useTime';
 import { FcOk } from "react-icons/fc"
+import { FaUserCircle } from "react-icons/fa";
 const VideoCard = ({ snippet, statistics, contentDetails }) => {
     const duration = ISO8601toDuration(contentDetails.duration);
     return (
@@ -10,7 +11,7 @@ const VideoCard = ({ snippet, statistics, contentDetails }) => {
             <h4 className='absolute bg-[#000000ad] text-sm text-white px-2 py-1 rounded-lg top-48 right-2'>{duration}</h4>
             </div>
             <h1 className='w-[330px] h-14 overflow-hidden font-semibold text-lg text-slate-700 ml-3 mt-[215px]'>{snippet.title}</h1>
-            <h2 className='flex items-center gap-1 text-lg font-bold  ml-3'>{snippet.channelTitle}<FcOk /></h2>
+            <h2 className='flex items-center gap-1 text-lg font-bold  ml-3'> <FaUserCircle />{snippet.channelTitle}<FcOk /></h2>
             <h3 className=' ml-3'>{statistics.viewCount} Views</h3>
             
         </div>

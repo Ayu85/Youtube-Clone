@@ -24,7 +24,7 @@ const SideBar = () => {
                 <Link to={'/'}>  <li className='flex mb-3 items-center gap-3 cursor-pointer'><IoIosHome className='text-3xl text-zinc-700' />Home</li></Link>
                 <li className='flex mb-3 items-center gap-3 cursor-pointer'> <SiYoutubeshorts className='text-3xl text-zinc-700' />Shorts</li>
                 <li className='flex mb-3 items-center gap-3 cursor-pointer'> <MdSubscriptions className='text-3xl text-zinc-700' />Subscriptions</li>
-                <Link to={'watch/live'}><li className='flex mb-3 items-center gap-3 cursor-pointer text-[#FF0000]'> <RiLiveFill className='text-3xl text-[#FF0000]' />Live</li>
+                <Link to={'/watch/live'}><li className='flex mb-3 items-center gap-3 cursor-pointer text-[#FF0000]'> <RiLiveFill className='text-3xl text-[#FF0000]' />Live</li>
                 </Link>
             </div>
             <div className='list-none font-semibold pl-3 tracking-wide text-lg mt-6 border-b border-slate-300'>

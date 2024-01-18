@@ -12,12 +12,12 @@ const LiveVideosPage = () => {
     })
     return (
         <div className='flex  gap-8'>
-            <SideBar/>
+            <SideBar />
             <div className='flex flex-wrap gap-6 items-center justify-start pt-10  pl-12 overflow-y-scroll h-auto'>
                 {/* video container */}
                 {
                     liveVideos?.map((items) => {
-                        return <Link to={"/watch?v=" + items.id}><LiveVideoCard {...items} /></Link >
+                        return <Link to={"live/watch" + items.id}><LiveVideoCard {...items} /></Link >
                     })
                 }
             </div>

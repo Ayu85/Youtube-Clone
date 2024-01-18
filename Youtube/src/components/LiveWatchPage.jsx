@@ -4,6 +4,7 @@ import SideBarSymbolOnly from './SideBarSymbolOnly'
 import VideoPlayer from './VideoPlayer'
 import { useSearchParams } from 'react-router-dom'
 import { API_KEY } from '../utils/constants'
+import LiveChat from './LiveChat'
 const LiveWatchPage = () => {
     const [currentVideoData, setData] = useState([])
     const [rawvideoId] = useSearchParams();
@@ -20,10 +21,12 @@ const LiveWatchPage = () => {
     return (
         <div className='flex '>
             <SideBarSymbolOnly />
-            <div className='pt-5'>
+            <div className='pt-5 ml-10'>
                 <VideoPlayer videoId={videoId} currentVideoData={currentVideoData} />
             </div>
-
+            <div className='pt-8 w-full ml-20 mr-10 rounded-xl px-3 '>
+                <LiveChat />
+            </div>
         </div>
     )
 }

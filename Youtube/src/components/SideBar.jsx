@@ -13,6 +13,8 @@ import { RiMovie2Fill } from "react-icons/ri";
 import { IoGameController } from "react-icons/io5";
 import { SiStudyverse } from "react-icons/si";
 import SideBarSymbolOnly from './sideBarSymbolOnly';
+import { RiLiveFill } from "react-icons/ri";
+
 const SideBar = () => {
     const isClicked = useSelector(store => store.slice.value)
     console.log(isClicked);
@@ -22,6 +24,8 @@ const SideBar = () => {
                 <li className='flex mb-3 items-center gap-3 cursor-pointer'><IoIosHome className='text-3xl text-zinc-700' />Home</li>
                 <li className='flex mb-3 items-center gap-3 cursor-pointer'> <SiYoutubeshorts className='text-3xl text-zinc-700' />Shorts</li>
                 <li className='flex mb-3 items-center gap-3 cursor-pointer'> <MdSubscriptions className='text-3xl text-zinc-700' />Subscriptions</li>
+                <li className='flex mb-3 items-center gap-3 cursor-pointer text-[#FF0000]'> <RiLiveFill className='text-3xl text-[#FF0000]' />Live</li>
+
             </div>
             <div className='list-none font-semibold pl-3 tracking-wide text-lg mt-6 border-b border-slate-300'>
                 <li className='flex mb-3 items-center gap-3 cursor-pointer'><MdFeaturedPlayList className='text-2xl text-zinc-700' />You </li>

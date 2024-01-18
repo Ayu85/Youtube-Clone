@@ -15,7 +15,7 @@ const LiveWatchPage = () => {
             console.log(json);
             setData(json?.items[0])
         }
-        // getVideoData();
+        //  getVideoData();
     }, [])
     return (
         <div className='flex '>
@@ -23,7 +23,7 @@ const LiveWatchPage = () => {
             <div className='pt-5'>
                 <VideoPlayer videoId={videoId} currentVideoData={currentVideoData} />
             </div>
-            
+
         </div>
     )
 }

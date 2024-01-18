@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addComment, removeComment } from '../utils/slices/CommentSlice';
 import useName from '../utils/useName';
 const Comments = ({ name, text, logo }) => {
-    return <div className='cmnt flex gap-2 items-center pt-3 shadow-sm pb-1'>
+    return <div className=' flex gap-2 items-center pt-3 shadow-sm pb-1'>
         <img src={logo} alt="" width={20} />
         <div className='font-bold text-lg'>{name}</div>
         <div className='pl-2 pt-[2px]'>{text}</div>
@@ -27,11 +27,11 @@ const LiveChat = () => {
 
         setInterval(() => {
             dispatch(removeComment())
-        }, 80000)
+        }, 10000)
 
     }, [])
     return (
-        <div>
+        <div className='flex flex-col-reverse'>
             {
                 sliceComments.map((items) => {
                     return <Comments   {...items} />

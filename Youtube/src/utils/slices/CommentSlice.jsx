@@ -8,8 +8,11 @@ const comment = createSlice({
     reducers: {
         addComment: (state, action) => {
             state.data.push(action.payload)
+        },
+        removeComment: (state) => {
+            state.data.shift(state)
         }
     }
 })
-export const { addComment } = comment.actions;
+export const { addComment ,removeComment} = comment.actions;
 export default comment.reducer;

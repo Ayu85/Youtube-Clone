@@ -12,16 +12,23 @@ const Comments = ({ name, text }) => {
 }
 const LiveChat = () => {
     const sliceComments = useSelector(store => store.comment.data)
+
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(addComment({
-            name: "Akshay Saini",
-            text: "This is akshay from UBER"
-        }))
+        // setInterval(() => {
+        //     dispatch(addComment({
+        //         name: "Akshay Saini",
+        //         text: "This is akshay from UBER"
+        //     }))
+        // }, 2000);
+        
     }, [])
     return (
         <div>
-            <Comments   {...sliceComments[0]} />
+            {sliceComments.map((items) => {
+                return <Comments   {...items} />
+            })}
+            {/* <Comments   {...sliceComments[0]} /> */}
         </div>
     )
 }

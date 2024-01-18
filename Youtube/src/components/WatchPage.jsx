@@ -3,17 +3,19 @@ import { Link, useSearchParams } from 'react-router-dom'
 import SideBarSymbolOnly from './sideBarSymbolOnly';
 import { API_KEY } from '../utils/constants';
 import { FaCircleCheck } from "react-icons/fa6";
-import { AiTwotoneLike } from "react-icons/ai";
 import { PiShareFatDuotone } from "react-icons/pi";
 import { VIDEO_API } from '../utils/constants';
 import SideDisplayVideos_watchpage from './sideDisplayVideos_watchpage';
 import VideoDetailsSection_watchpage from './VideoDetailsSection_watchpage';
-import { FaUserCircle } from "react-icons/fa";
+import VideoPlayer from './VideoPlayer';
 // import { Link } from 'react-router-dom';
+import { allVideos } from '../utils/__mocks__'
+
 const WatchPage = () => {
   const [SearchVideoId] = useSearchParams();
   const [currentVideoData, setData] = useState([])
   const [sideDisplayVideos, setDisplayVideos] = useState([])
+  const [videos, setVideos] = useState([])
   const videoId = SearchVideoId.get('v');
   useEffect(() => {
     const getVideoData = async () => {
@@ -23,14 +25,15 @@ const WatchPage = () => {
       setData(json?.items[0])
     }
     getVideoData();
-  }, [currentVideoData])
+  }, [])
   useEffect(() => {
-    const getVideoData2 = async () => {
-      const raw = await fetch(VIDEO_API);
-      const json = await raw.json();
-      setDisplayVideos(json?.items)
-    }
-    getVideoData2()
+    // const getVideoData2 = async () => {
+    //   const raw = await fetch(VIDEO_API);
+    //   const json = await raw.json();
+    //   setDisplayVideos(json?.items)
+    // }
+    setDisplayVideos(allVideos)
+    // getVideoData2()
   }, [])
   //  console.log("display", sideDisplayVideos);
   return (
@@ -38,7 +41,7 @@ const WatchPage = () => {
       <SideBarSymbolOnly />
       <div className='pt-8 '>
         {/* VIDEO PLAYER AND NAME */}
-        <div>  <iframe width={400} height={300} style={{ borderRadius: "25px" }}
+        {/* <div>  <iframe width={400} height={300} style={{ borderRadius: "25px" }}
           src={"https://www.youtube.com/embed/" + videoId}
           title="Video Player"
           frameborder="0"
@@ -51,7 +54,7 @@ const WatchPage = () => {
             <div className='flex flex-col '> <h2 className='flex items-center gap-1 text-xl font-bold'>
               <FaUserCircle className='text-4xl' />{currentVideoData?.snippet?.channelTitle}
             </h2>
-              {/* <h2 className='font-semibold pl-6'>{currentVideoData?.statistics?.viewCount} Views</h2> */}
+               <h2 className='font-semibold pl-6'>{currentVideoData?.statistics?.viewCount} Views</h2> 
           </div>
             <div className='flex gap-4'>
               <button className='flex items-center gap-1 border-slate-300 border rounded-full text-xl font-semibold px-5 py-2'>
@@ -61,6 +64,9 @@ const WatchPage = () => {
                 Share</button>
             </div>
           </div>
+        </div> */}
+        <div>
+          <VideoPlayer videoId={videoId} currentVideoData={currentVideoData} />
         </div>
         {/* CURRENT VIDEO ABOUT  */}
         <div className='  rounded-xl lg:h-[460px] lg:w-[800px]  md:w-[700px] md:h-[420px] p-3 sm:w-[500px] sm:h-[300px]'>

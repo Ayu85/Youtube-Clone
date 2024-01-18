@@ -17,7 +17,7 @@ const LiveVideosPage = () => {
                 {/* video container */}
                 {
                     liveVideos?.map((items) => {
-                        return <Link to={"live/watch" + items.id}><LiveVideoCard {...items} /></Link >
+                        return <Link to={"live/watch?v=" + items.id}><LiveVideoCard {...items} /></Link >
                     })
                 }
             </div>

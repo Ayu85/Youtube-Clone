@@ -22,7 +22,7 @@ const appRoute = createBrowserRouter([
     element: <LiveVideosPage />
   },
   {
-    path: 'live/watch',
+    path: 'watch/live/live/watch',
     element: <LiveWatchPage />
   }
 ])

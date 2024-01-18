@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import SideBarSymbolOnly from './sideBarSymbolOnly';
+import SideBarSymbolOnly from './SideBarSymbolOnly';
 import { API_KEY } from '../utils/constants';
 import { FaCircleCheck } from "react-icons/fa6";
+import { AiTwotoneLike } from "react-icons/ai";
 import { PiShareFatDuotone } from "react-icons/pi";
 import { VIDEO_API } from '../utils/constants';
 import SideDisplayVideos_watchpage from './sideDisplayVideos_watchpage';

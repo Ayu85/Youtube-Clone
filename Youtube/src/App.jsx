@@ -5,6 +5,7 @@ import store from './utils/store'
 import { Provider } from 'react-redux'
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import WatchPage from './components/WatchPage'
+import LiveWatchPage from './components/LiveWatchPage'
 const appRoute = createBrowserRouter([
   {
     path: '/',
@@ -14,6 +15,10 @@ const appRoute = createBrowserRouter([
   {
     path: '/watch',
     element: <WatchPage />
+  },
+  {
+    path: '/watch/live',
+    element: <LiveWatchPage />
   }
 ])
 function App() {

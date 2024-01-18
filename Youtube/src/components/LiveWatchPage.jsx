@@ -4,6 +4,7 @@ import SideBar from './SIdeBar'
 import { liveVideoData } from '../utils/__mocks__'
 import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'
+import { LiveVideoCard } from './VideoCard'
 const LiveWatchPage = () => {
     const [liveVideos, setLiveVideos] = useState([])
     useEffect(() => {
@@ -12,11 +13,11 @@ const LiveWatchPage = () => {
     return (
         <div className='flex  gap-8'>
             <SideBar/>
-            <div className='flex flex-wrap gap-6 items-center justify-start pt-5  pl-10 overflow-y-scroll h-auto'>
+            <div className='flex flex-wrap gap-6 items-center justify-start pt-10  pl-12 overflow-y-scroll h-auto'>
                 {/* video container */}
                 {
                     liveVideos?.map((items) => {
-                        return <Link to={"/watch?v=" + items.id}><VideoCard {...items} /></Link >
+                        return <Link to={"/watch?v=" + items.id}><LiveVideoCard {...items} /></Link >
                     })
                 }
             </div>

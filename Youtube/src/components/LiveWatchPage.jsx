@@ -24,7 +24,7 @@ const LiveWatchPage = () => {
             <div className='pt-5 ml-10'>
                 <VideoPlayer videoId={videoId} currentVideoData={currentVideoData} />
             </div>
-            <div className='mt-9 w-full ml-20 mr-10 rounded-xl px-3 bg-slate-100  lg:h-[440px] md:h-[420px] p-3  '>
+            <div className='mt-9 w-full ml-20 mr-10 overflow-scroll rounded-xl px-3 bg-slate-100  lg:h-[440px] md:h-[420px] p-3  '>
                 <h1 className='text-lg font-bold'>COMMENTS :</h1>
                 <LiveChat />
             </div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FcOnlineSupport } from "react-icons/fc";
 
 const Comments = () => {
@@ -12,13 +12,6 @@ const LiveChat = () => {
     return (
         <div>
             <Comments />
-            <Comments />
-            <Comments />
-            <Comments />
-            <Comments />
-            <Comments />
-            <Comments />
-
         </div>
     )
 }

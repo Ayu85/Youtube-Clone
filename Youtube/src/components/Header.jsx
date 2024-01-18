@@ -49,7 +49,7 @@ const Header = () => {
                     className='  border-slate-300 border pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full' name="" id="" />
                 <button className='py-2 font-bold px-4 rounded-r-full border text-xl border-l-white border-slate-300'><IoIosSearch /></button>
                 <div className='absolute
-                 h-20 overflow-hidden sm:h-20 sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 bg-slate-50 py-3 rounded-xl z-50 pl-3
+                 h-20 overflow-hidden sm:h-auto sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 bg-slate-50 py-3 rounded-xl z-50 pl-3
                   max-md:w-[200px] max-sm:w-[100px]  w-[500px] '>
                     {
                         showResults && searchResults.map((results) => {

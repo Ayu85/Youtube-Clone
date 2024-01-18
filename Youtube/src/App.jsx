@@ -5,7 +5,7 @@ import store from './utils/store'
 import { Provider } from 'react-redux'
 import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import WatchPage from './components/WatchPage'
-import LiveWatchPage from './components/LiveWatchPage'
+import LiveVideosPage from './components/LiveVideoPage'
 const appRoute = createBrowserRouter([
   {
     path: '/',
@@ -18,7 +18,7 @@ const appRoute = createBrowserRouter([
   },
   {
     path: '/watch/live',
-    element: <LiveWatchPage />
+    element: <LiveVideosPage />
   }
 ])
 function App() {

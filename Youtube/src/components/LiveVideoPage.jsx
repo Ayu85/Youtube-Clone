@@ -5,7 +5,7 @@ import { liveVideoData } from '../utils/__mocks__'
 import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'
 import { LiveVideoCard } from './VideoCard'
-const LiveWatchPage = () => {
+const LiveVideosPage = () => {
     const [liveVideos, setLiveVideos] = useState([])
     useEffect(() => {
         setLiveVideos(liveVideoData)
@@ -25,4 +25,4 @@ const LiveWatchPage = () => {
     )
 }
 
-export default LiveWatchPage
+export default LiveVideosPage

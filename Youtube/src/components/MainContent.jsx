@@ -7,6 +7,7 @@ import { allVideos } from '../utils/__mocks__'
 const MainContent = () => {
     const isSideOpen = useSelector(store => store.slice.value)
     const [videos, setVideos] = useState([])
+    const theme = useSelector(store => store.theme.isDark)
     useEffect(() => {
         const getVideoData = async () => {
             const raw = await fetch(VIDEO_API);
@@ -16,17 +17,17 @@ const MainContent = () => {
         // getVideoData()
         setVideos(allVideos)
     }, [])
-   console.log(videos);
+    console.log(videos);
     return (
         <div className=' w-[100%]' >
             <div className='font-semibold'>
                 {/* button list */}
-                <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>All</button>
-                <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>Shorts</button>
-                <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>Videos</button>
-                <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>Unwatched</button>
-                <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>Watched</button>
-                <button className='m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg'>Recently Uploaded</button>
+                <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>All</button>
+                <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Shorts</button>
+                <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Videos</button>
+                <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Unwatched</button>
+                <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Watched</button>
+                <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Recently Uploaded</button>
             </div>
             <div className='flex flex-wrap gap-6 items-center justify-start pt-5  pl-3 overflow-y-scroll h-auto'>
                 {/* video container */}
@@ -36,7 +37,7 @@ const MainContent = () => {
                     })
                 }
             </div>
-            
+
         </div>
     )
 }

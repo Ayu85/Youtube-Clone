@@ -5,16 +5,18 @@ import { liveVideoData } from '../utils/__mocks__'
 import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'
 import { LiveVideoCard } from './VideoCard'
+import { useSelector } from 'react-redux'
 const LiveVideosPage = () => {
     const [liveVideos, setLiveVideos] = useState([])
     useEffect(() => {
         setLiveVideos(liveVideoData)
     })
+    const theme = useSelector(store => store.theme.isDark)
     return (
-        <div className='flex  '>
-            <div><SideBar />
-            </div>
-            <div className='flex flex-wrap gap-6 items-center justify-start pt-10  pl-12 overflow-y-scroll h-auto'>
+        <div className={`flex ${theme && "bg-[#0F0F0F]"}`}>
+            < div > <SideBar />
+            </div >
+            <div className={`ml-9 flex flex-wrap gap-6 items-center justify-start pt-10  pl-12 overflow-y-scroll h-auto ${theme && "bg-[#0F0F0F]"}`}>
                 {/* video container */}
                 {
                     liveVideos?.map((items) => {
@@ -22,7 +24,7 @@ const LiveVideosPage = () => {
                     })
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

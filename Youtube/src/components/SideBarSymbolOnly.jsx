@@ -18,7 +18,7 @@ import { RiLiveFill } from "react-icons/ri";
 const SideBarSymbolOnly = () => {
     const theme = useSelector(store => store.theme.isDark)
     return (
-        <div className={`flex flex-col w-48 gap-3  h-auto pl-2 pt-3 transition-all ${theme && "text-white"}`} >
+        <div className={`flex flex-col px-4 gap-3  h-auto pl-2 pt-3 transition-all ${theme && "text-white bg-[#0F0F0F]"}`} >
             <Link to={'/'}><IoIosHome className='text-5xl  cursor-pointer   pb-3 ' /></Link>
             <SiYoutubeshorts className='text-5xl  cursor-pointer   pb-3' />
             <MdSubscriptions className='text-5xl  cursor-pointer   pb-3' />

@@ -28,8 +28,8 @@ const LiveWatchPage = () => {
                 <h1 className='text-lg font-bold'>COMMENTS :</h1>
                 <LiveChat />
             </div>
-                <div className='ml-20 mt-5'>
-                    <input type="text" />
+                <div className='ml-32 mt-5 border-b border-b-slate-300'>
+                    <input type="text" placeholder='Write comment here........... ' className='pl-1 borber-b w-72 outline-0' />
                     <button>Send</button>
                 </div></div>
         </div>

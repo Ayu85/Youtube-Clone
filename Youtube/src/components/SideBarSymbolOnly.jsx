@@ -16,21 +16,22 @@ import { Link } from 'react-router-dom';
 import { RiLiveFill } from "react-icons/ri";
 
 const SideBarSymbolOnly = () => {
+    const theme = useSelector(store => store.theme.isDark)
     return (
-        <div className='flex flex-col w-48 gap-3  h-auto pl-2 pt-3 transition-all '>
-            <Link to={'/'}><IoIosHome className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3 ' /></Link>
-            <SiYoutubeshorts className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <MdSubscriptions className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <RiLiveFill className=' text-[#FF0000] text-5xl cursor-pointer border-b border-slate-300 pb-3' />
-            <MdFeaturedPlayList className='text-5xl text-zinc-7 cursor-pointer border-b border-slate-300 pb-3' />
-            <FaHistory className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <FaFire className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <FaBagShopping className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <SiYoutubemusic className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <RiMovie2Fill className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <IoGameController className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <MdSportsCricket className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
-            <SiStudyverse className='text-5xl text-zinc-700 cursor-pointer border-b border-slate-300 pb-3' />
+        <div className={`flex flex-col w-48 gap-3  h-auto pl-2 pt-3 transition-all ${theme && "text-white"}`} >
+            <Link to={'/'}><IoIosHome className='text-5xl  cursor-pointer   pb-3 ' /></Link>
+            <SiYoutubeshorts className='text-5xl  cursor-pointer   pb-3' />
+            <MdSubscriptions className='text-5xl  cursor-pointer   pb-3' />
+            <RiLiveFill className=' text-[#FF0000] text-5xl cursor-pointer   pb-3' />
+            <MdFeaturedPlayList className='text-5xl text-zinc-7 cursor-pointer   pb-3' />
+            <FaHistory className='text-5xl  cursor-pointer   pb-3' />
+            <FaFire className='text-5xl  cursor-pointer   pb-3' />
+            <FaBagShopping className='text-5xl  cursor-pointer   pb-3' />
+            <SiYoutubemusic className='text-5xl  cursor-pointer   pb-3' />
+            <RiMovie2Fill className='text-5xl  cursor-pointer   pb-3' />
+            <IoGameController className='text-5xl  cursor-pointer   pb-3' />
+            <MdSportsCricket className='text-5xl  cursor-pointer   pb-3' />
+            <SiStudyverse className='text-5xl  cursor-pointer   pb-3' />
         </div >
     )
 }

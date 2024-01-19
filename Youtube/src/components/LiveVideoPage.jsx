@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import SideBarSymbolOnly from "./SideBarSymbolOnly"
-import SideBar from './SIdeBar'
+import SideBar from './SideBar'
 import { liveVideoData } from '../utils/__mocks__'
 import VideoCard from './VideoCard'
 import { Link } from 'react-router-dom'
@@ -11,8 +11,9 @@ const LiveVideosPage = () => {
         setLiveVideos(liveVideoData)
     })
     return (
-        <div className='flex  gap-8'>
-            <SideBar />
+        <div className='flex  '>
+            <div><SideBar />
+            </div>
             <div className='flex flex-wrap gap-6 items-center justify-start pt-10  pl-12 overflow-y-scroll h-auto'>
                 {/* video container */}
                 {

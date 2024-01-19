@@ -13,11 +13,11 @@ import { toogleTheme } from '../utils/slices/ThemeSlice';
 const Header = () => {
     const dispatch = useDispatch();
     const isClicked = useSelector(store => store.slice.value)
-    const tooglerTheme = useSelector(store => store.theme.isDark)
+    const theme = useSelector(store => store.theme.isDark)
     const [searchText, setSearchText] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [showResults, setShowResults] = useState(false)
-    console.log(tooglerTheme);
+    console.log(theme);
     useEffect(() => {
         const getSearchMatch = async () => {
             const raw = await fetch(SEARCH_API + searchText);
@@ -29,7 +29,8 @@ const Header = () => {
     }, [searchText])
     // console.log(searchResults);
     return (
-        <div className='flex   justify-between py-4 px-3 shadow-slate-100  shadow-lg'>
+        <div className={`flex   justify-between py-4 px-3 shadow-slate-100  shadow-lg 
+         ${theme && "bg-[#0F0F0F]"}`}>
             <div className='flex gap-2 items-center pl-2 '>
                 <GiHamburgerMenu className='text-3xl cursor-pointer hover:bg-slate-300 hover:rounded-full transition-all ' onClick={() => {
                     !isClicked ? dispatch(setValue(true)) : dispatch(setValue(false))
@@ -48,13 +49,13 @@ const Header = () => {
                         setShowResults(false)
                     }}
                     type="text" placeholder='Search'
-                    className='  border-slate-300 border pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full' name="" id="" />
-                <button className='py-2 font-bold px-4 rounded-r-full border text-xl border-l-white border-slate-300'><IoIosSearch /></button>
-                <div className='absolute
-                 h-20 overflow-hidden sm:h-auto sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 bg-slate-50 py-3 rounded-xl z-50 pl-3
-                  max-md:w-[200px] max-sm:w-[100px]  w-[500px] '>
+                    className={`border-slate-300 border pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${theme && "bg-[#0F0F0F] border-[#292929] border-2"}`} name="" id="" />
+                <button className={`py-2 font-bold px-4 rounded-r-full border text-xl  border-slate-300 ${theme && "bg-[#292929] border-[#292929] border-2"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>
+
+                {showResults && <div className={`absolute h-0 overflow-hidden sm:h-auto sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 bg-slate-50 py-3 rounded-xl z-50 pl-3
+                  max-md:w-[200px] max-sm:w-[100px]  w-[500px]   ${theme && "bg-[#0F0F0F]"}`} >
                     {
-                        showResults && searchResults.map((results) => {
+                        searchResults.map((results) => {
                             return <h1 className='text-lg flex items-center gap-3 font-semibold
                              border-b-slate-200 border-b py-[1px] hover:bg-slate-200 transition-all cursor-pointer'><IoSearch />
                                 {results}</h1>
@@ -62,7 +63,7 @@ const Header = () => {
 
                     }
 
-                </div>
+                </div>}
             </div>
 
             <div >
@@ -71,18 +72,17 @@ const Header = () => {
             {/* theme toogler */}
             <div className=' flex gap-3 items-center pr-2'>
                 <FaUserCircle className='text-3xl' />
-                <label className="relative flex items-center cursor-pointer">
+                <label className={`relative flex items-center cursor-pointer `}>
                     <input type="checkbox" value="" className="sr-only peer"
                         onChange={(e) => {
-                            // console.log(e.target.checked);
                             dispatch(toogleTheme())
                         }}
                     />
-                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                    <span className="ms-3 text-lg font-medium text-gray-900 dark:text-gray-700">Dark Mode</span>
+                    <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#3C9CEF] "></div>
+                    <span className={`ms-3 text-lg font-medium  ${theme && "text-[#3C9CEF]"}`}>Dark Mode</span>
                 </label>
             </div>
-        </div>
+        </div >
     )
 }
 

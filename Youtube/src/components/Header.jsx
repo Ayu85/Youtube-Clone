@@ -8,6 +8,7 @@ import { setValue } from '../utils/slices/HamburgerSlice';
 import { SEARCH_API } from '../utils/constants';
 import { CiSearch } from "react-icons/ci";
 import { IoSearch } from "react-icons/io5";
+import { toogleTheme } from '../utils/slices/ThemeSlice';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Header = () => {
     const [searchText, setSearchText] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [showResults, setShowResults] = useState(false)
-     console.log(tooglerTheme);
+    console.log(tooglerTheme);
     useEffect(() => {
         const getSearchMatch = async () => {
             const raw = await fetch(SEARCH_API + searchText);
@@ -71,7 +72,12 @@ const Header = () => {
             <div className=' flex gap-3 items-center pr-2'>
                 <FaUserCircle className='text-3xl' />
                 <label className="relative flex items-center cursor-pointer">
-                    <input type="checkbox" value="" className="sr-only peer" />
+                    <input type="checkbox" value="" className="sr-only peer"
+                        onChange={(e) => {
+                            // console.log(e.target.checked);
+                            dispatch(toogleTheme())
+                        }}
+                    />
                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                     <span className="ms-3 text-lg font-medium text-gray-900 dark:text-gray-700">Dark Mode</span>
                 </label>

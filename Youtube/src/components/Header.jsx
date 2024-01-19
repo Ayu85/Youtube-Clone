@@ -9,6 +9,7 @@ import { SEARCH_API } from '../utils/constants';
 import { CiSearch } from "react-icons/ci";
 import { IoSearch } from "react-icons/io5";
 import { toogleTheme } from '../utils/slices/ThemeSlice';
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const Header = () => {
         <div className={`flex   justify-between py-4 px-3 shadow-slate-100  shadow-lg 
          ${theme && "bg-[#0F0F0F]"}`}>
             <div className='flex gap-2 items-center pl-2 '>
-                <GiHamburgerMenu className='text-3xl cursor-pointer hover:bg-slate-300 hover:rounded-full transition-all ' onClick={() => {
+                <RxHamburgerMenu className={`text-3xl cursor-pointer  hover:bg-slate-300 hover:rounded-full transition-all ${theme && "text-white font-extralight"}`} onClick={() => {
                     !isClicked ? dispatch(setValue(true)) : dispatch(setValue(false))
                 }} />
                 <img src={mainLogo} alt="" className='' width={110} />

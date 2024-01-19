@@ -5,7 +5,9 @@ import VideoPlayer from './VideoPlayer'
 import { useSearchParams } from 'react-router-dom'
 import { API_KEY } from '../utils/constants'
 import LiveChat from './LiveChat'
+import { useSelector } from 'react-redux'
 const LiveWatchPage = () => {
+    const theme = useSelector(store => store.theme.isDark)
     const [currentVideoData, setData] = useState([])
     const [rawvideoId] = useSearchParams();
     const videoId = rawvideoId.get("v")
@@ -19,7 +21,7 @@ const LiveWatchPage = () => {
         //  getVideoData();
     }, [])
     return (
-        <div className='flex '>
+        <div className={`flex ${theme && "bg-[#0F0F0F]"}`} >
             <SideBarSymbolOnly />
             <div className='pt-5 ml-10'>
                 <VideoPlayer videoId={videoId} currentVideoData={currentVideoData} />

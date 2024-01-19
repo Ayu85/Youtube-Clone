@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import mainLogo from "../assets/yt-logo-main.png"
+import lightLogo from "../assets/yt-logo-main.png"
+import darkLogo from "../assets/yt_logo_rgb_dark.png"
 import { IoIosSearch } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUserCircle } from "react-icons/fa";
@@ -36,7 +37,7 @@ const Header = () => {
                 <RxHamburgerMenu className={`text-3xl cursor-pointer  hover:bg-slate-300 hover:rounded-full transition-all ${theme && "text-white font-extralight"}`} onClick={() => {
                     !isClicked ? dispatch(setValue(true)) : dispatch(setValue(false))
                 }} />
-                <img src={mainLogo} alt="" className='' width={110} />
+                <img src={theme ? darkLogo : lightLogo} alt="" className='' width={110} />
             </div>
             <div className='flex relative '>
                 <input

@@ -1,9 +1,9 @@
 import React from 'react'
 import MainContent from './MainContent'
-import SideBar from './SIdeBar'
+import SideBar from './SideBar'
 const Body = () => {
   return (
-    <div className='flex mt-5 gap-10'>
+    <div className='flex  gap-10'>
       {/* sidebar and maincontainer */}
       <SideBar />
       <MainContent />

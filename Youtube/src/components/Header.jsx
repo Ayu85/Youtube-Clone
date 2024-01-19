@@ -12,10 +12,11 @@ import { IoSearch } from "react-icons/io5";
 const Header = () => {
     const dispatch = useDispatch();
     const isClicked = useSelector(store => store.slice.value)
+    const tooglerTheme = useSelector(store => store.theme.isDark)
     const [searchText, setSearchText] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [showResults, setShowResults] = useState(false)
-    // console.log(isClicked);
+     console.log(tooglerTheme);
     useEffect(() => {
         const getSearchMatch = async () => {
             const raw = await fetch(SEARCH_API + searchText);
@@ -25,7 +26,7 @@ const Header = () => {
         }
         getSearchMatch();
     }, [searchText])
-    console.log(searchResults);
+    // console.log(searchResults);
     return (
         <div className='flex   justify-between py-4 px-3 shadow-slate-100  shadow-lg'>
             <div className='flex gap-2 items-center pl-2 '>

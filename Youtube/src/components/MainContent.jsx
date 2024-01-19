@@ -20,7 +20,7 @@ const MainContent = () => {
     console.log(videos);
     return (
         <div className=' w-[100%]' >
-            <div className='font-semibold'>
+            <div className={`font-semibold ${!isSideOpen && "pl-28"}`}>
                 {/* button list */}
                 <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>All</button>
                 <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Shorts</button>
@@ -29,7 +29,7 @@ const MainContent = () => {
                 <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Watched</button>
                 <button className={`m-2 bg-slate-200 border-slate-300 border px-4 py-1 rounded-lg ${theme && "bg-[#3F3F3F] text-white border-none"}`}>Recently Uploaded</button>
             </div>
-            <div className='flex flex-wrap gap-6 items-center justify-start pt-5  pl-3 overflow-y-scroll h-auto'>
+            <div className={`flex flex-wrap gap-6 items-center justify-start pt-5  pl-10 overflow-y-scroll h-auto ${!isSideOpen && "pl-28"}`}>
                 {/* video container */}
                 {
                     videos?.map((items) => {

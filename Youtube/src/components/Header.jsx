@@ -49,25 +49,21 @@ const Header = () => {
                         setShowResults(false)
                     }}
                     type="text" placeholder='Search'
-                    className={`border-slate-300 border pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${theme && "bg-[#0F0F0F] border-[#292929] border-2"}`} name="" id="" />
-                <button className={`py-2 font-bold px-6 rounded-r-full border text-xl  border-slate-300 ${theme && "bg-[#292929] border-[#292929] border-2"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>
+                    className={` border-slate-300 border pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${theme && "bg-[#0F0F0F] border-[#292929] border-2 outline-none shadow-lg shadow-[#292929] text-gray-300"}`} name="" id="" />
+                <button className={`py-2 font-bold px-6 rounded-r-full border text-xl  border-slate-300 ${theme && "bg-[#292929] border-[#292929] border-2  shadow-lg shadow-[#292929]"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>
 
-                {showResults && <div className={`absolute h-0 overflow-hidden sm:h-auto sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 bg-slate-50 py-3 rounded-xl z-50 pl-3
-                  max-md:w-[200px] max-sm:w-[100px]  w-[500px]   ${theme && "bg-[#0F0F0F]"}`} >
+                {searchResults.length !== 0 && <div className={`absolute h-0 overflow-hidden sm:h-auto sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 bg-slate-50 py-6 rounded-xl z-50 pl-3
+                  max-md:w-[200px] max-sm:w-[100px]  w-[500px]    ${theme && "bg-[#292929] border-[#292929] border-2  shadow-lg shadow-[#292929] text-white"}`} >
                     {
-                        searchResults.map((results) => {
+                        showResults && searchResults.map((results) => {
                             return <h1 className='text-lg flex items-center gap-3 font-semibold
-                             border-b-slate-200 border-b py-[1px] hover:bg-slate-200 transition-all cursor-pointer'><IoSearch />
+                             border-[#585858] border-b py-[1px] hover:bg-slate-200 transition-all cursor-pointer'><IoSearch />
                                 {results}</h1>
                         })
 
                     }
 
                 </div>}
-            </div>
-
-            <div >
-
             </div>
             {/* theme toogler */}
             <div className=' flex gap-3 items-center pr-2'>

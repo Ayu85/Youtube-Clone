@@ -8,7 +8,7 @@ const VideoCard = ({ snippet, statistics, contentDetails }) => {
     const duration = ISO8601toDuration(contentDetails?.duration);
     const theme = useSelector(store => store.theme.isDark)
     return (
-        <div className={`relative w-[375px] h-[330px] py-1   shadow-lg shadow-slate-200 ${theme && "text-slate-50 shadow-[#2c2c2c] "}`}>
+        <div className={`relative w-[375px] h-[330px] py-1   shadow-lg shadow-slate-200 ${theme && "text-slate-50 shadow-[#2c2c2c9d]  "}`}>
             <div className='relative'>
                 <img src={snippet?.thumbnails?.maxres?.url} width={375} className='absolute rounded-xl' alt="" />
                 <h4 className='absolute bg-[#000000ad] text-sm text-white px-2 py-1 rounded-lg top-48 right-2'>{duration || ""}</h4>

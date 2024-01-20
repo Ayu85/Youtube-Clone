@@ -3,7 +3,6 @@ import lightLogo from "../assets/yt-logo-main.png"
 import darkLogo from "../assets/yt_logo_rgb_dark.png"
 import { IoIosSearch } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { FaUserCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux';
 import { setValue } from '../utils/slices/HamburgerSlice';
 import { SEARCH_API } from '../utils/constants';
@@ -56,7 +55,7 @@ const Header = () => {
                     className={`   pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${!theme && "border-slate-300 border"} ${showResults && "outline-[#3C9CEF] outline z-50"} ${theme && "bg-[#0F0F0F] border-[#292929]   border-2 shadow-sm shadow-[#292929] text-gray-300"}`} name="" id="" />
                 {searchResults.length !== 0 && <RxCross1 onClick={() => {
                     setSearchText("")
-                }} className={`absolute ${theme && "text-white"} ${!theme&&"text-slate-700"} right-20 top-[8px] z-50 text-2xl cursor-pointer`} />
+                }} className={`absolute ${theme && "text-white"} ${!theme && "text-slate-700"} right-20 top-[8px] z-50 text-2xl cursor-pointer`} />
 
                 }
                 <button className={`py-2 font-bold px-6 rounded-r-full border text-xl   ${!theme && "border-slate-300 border"}  ${theme && "bg-[#292929] border-[#292929] border-2  shadow-sm shadow-[#292929]"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>
@@ -77,7 +76,7 @@ const Header = () => {
             {/* theme toogler */}
             <div className=' flex gap-3 items-center pr-2'>
                 {/* <FaUserCircle className={`text-3xl ${theme && "text-white"}`} /> */}
-                <LoginButton/>
+                <LoginButton />
                 <label className={`relative flex items-center cursor-pointer `}>
                     <input type="checkbox" value="" className="sr-only peer"
                         onChange={(e) => {

@@ -12,15 +12,17 @@ import { toogleTheme } from '../utils/slices/ThemeSlice';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 import LoginButton from './Buttons/LoginButton';
-
+import LogoutButton from './Buttons/LogoutButton';
+import { useAuth0 } from "@auth0/auth0-react";
 const Header = () => {
     const dispatch = useDispatch();
     const isClicked = useSelector(store => store.slice.value)
     const theme = useSelector(store => store.theme.isDark)
+    const { user, isAuthenticated, isLoading } = useAuth0();
     const [searchText, setSearchText] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [showResults, setShowResults] = useState(false)
-    console.log(theme);
+    // console.log(theme);
     useEffect(() => {
         const getSearchMatch = async () => {
             const raw = await fetch(SEARCH_API + searchText);
@@ -76,7 +78,7 @@ const Header = () => {
             {/* theme toogler */}
             <div className=' flex gap-3 items-center pr-2'>
                 {/* <FaUserCircle className={`text-3xl ${theme && "text-white"}`} /> */}
-                <LoginButton />
+                {!isAuthenticated ? <LoginButton /> : <LogoutButton />}
                 <label className={`relative flex items-center cursor-pointer `}>
                     <input type="checkbox" value="" className="sr-only peer"
                         onChange={(e) => {

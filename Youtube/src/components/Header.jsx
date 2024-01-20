@@ -51,9 +51,11 @@ const Header = () => {
                     onBlur={() => {
                         setShowResults(false)
                     }}
-                    type="text" placeholder='Search'
+                    type="text" placeholder='Search' value={searchText}
                     className={`   pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${!theme && "border-slate-300 border"} ${showResults && "outline-[#3C9CEF] outline z-50"} ${theme && "bg-[#0F0F0F] border-[#292929]   border-2 shadow-sm shadow-[#292929] text-gray-300"}`} name="" id="" />
-                {searchResults.length !== 0 && <RxCross1 className='absolute text-white right-20 top-[8px] z-50 text-2xl' />
+                {searchResults.length !== 0 && <RxCross1 onClick={() => {
+                    setSearchText("")
+                }} className={`absolute ${theme && "text-white"} ${!theme&&"text-slate-700"} right-20 top-[8px] z-50 text-2xl cursor-pointer`} />
 
                 }
                 <button className={`py-2 font-bold px-6 rounded-r-full border text-xl   ${!theme && "border-slate-300 border"}  ${theme && "bg-[#292929] border-[#292929] border-2  shadow-sm shadow-[#292929]"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>

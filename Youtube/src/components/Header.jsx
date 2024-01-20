@@ -11,6 +11,7 @@ import { CiSearch } from "react-icons/ci";
 import { IoSearch } from "react-icons/io5";
 import { toogleTheme } from '../utils/slices/ThemeSlice';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { RxCross1 } from "react-icons/rx";
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -52,6 +53,7 @@ const Header = () => {
                     }}
                     type="text" placeholder='Search'
                     className={`   pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${!theme && "border-slate-300 border"} ${showResults && "outline-[#3C9CEF] outline z-50"} ${theme && "bg-[#0F0F0F] border-[#292929]   border-2 shadow-sm shadow-[#292929] text-gray-300"}`} name="" id="" />
+               <RxCross1 className='absolute text-white right-20 top-[8px] z-50 text-2xl'/>
                 <button className={`py-2 font-bold px-6 rounded-r-full border text-xl   ${!theme && "border-slate-300 border"}  ${theme && "bg-[#292929] border-[#292929] border-2  shadow-sm shadow-[#292929]"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>
 
                 {showResults && searchResults.length !== 0 && <div className={`absolute h-0 overflow-hidden sm:h-auto sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 ${!theme && "bg-slate-50"} py-6 rounded-xl z-50 pl-3

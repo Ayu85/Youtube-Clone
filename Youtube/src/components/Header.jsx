@@ -12,6 +12,7 @@ import { IoSearch } from "react-icons/io5";
 import { toogleTheme } from '../utils/slices/ThemeSlice';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
+import LoginButton from './LoginButton';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -75,7 +76,8 @@ const Header = () => {
             </div>
             {/* theme toogler */}
             <div className=' flex gap-3 items-center pr-2'>
-                <FaUserCircle className={`text-3xl ${theme && "text-white"}`} />
+                {/* <FaUserCircle className={`text-3xl ${theme && "text-white"}`} /> */}
+                <LoginButton/>
                 <label className={`relative flex items-center cursor-pointer `}>
                     <input type="checkbox" value="" className="sr-only peer"
                         onChange={(e) => {

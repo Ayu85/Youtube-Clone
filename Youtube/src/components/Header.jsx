@@ -11,7 +11,7 @@ import { IoSearch } from "react-icons/io5";
 import { toogleTheme } from '../utils/slices/ThemeSlice';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
-import LoginButton from './LoginButton';
+import LoginButton from './Buttons/LoginButton';
 
 const Header = () => {
     const dispatch = useDispatch();

@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { MdDateRange } from "react-icons/md";
 import CommentSection from './CommentSection';
+import { useSelector } from 'react-redux';
 const VideoDetailsSection_watchpage = ({ snippet, statistics }) => {
     const [isViewMore, setViewMore] = useState(false)
+    const theme = useSelector(store => store.theme.isDark)
     const date = new Date();
     console.log();
     return (
         <>
-            <div className=' hover:bg-slate-200 cursor-pointer h-[100px] overflow-hidden bg-slate-100 px-4 py-3 rounded-xl' id='about'>
+            <div className={` cursor-pointer h-[100px] overflow-hidden  px-4 py-3 rounded-xl' ${theme && "bg-[#4f4f4f] rounded-xl"}`} id='about'>
                 <div className='flex gap-3 font-semibold justify-between'>
                     <h1>{statistics?.viewCount} Views</h1>
                     <h1 className='flex items-center gap-1'>{date.toDateString(snippet?.publishedAt)}<MdDateRange />

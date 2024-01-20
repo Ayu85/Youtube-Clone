@@ -43,7 +43,7 @@ const WatchPage = () => {
   return (
     <div className={`flex ${theme && "bg-[#0F0F0F] text-white"}`}>
       <SideBarSymbolOnly />
-      <div className='pt-8 '>
+      <div className='pt-8 ml-10'>
         {/* VIDEO PLAYER AND NAME */}
         <div>
           <VideoPlayer videoId={videoId} currentVideoData={currentVideoData} />

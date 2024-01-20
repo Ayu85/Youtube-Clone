@@ -51,8 +51,8 @@ const Header = () => {
                         setShowResults(false)
                     }}
                     type="text" placeholder='Search'
-                    className={` border-slate-300 border pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${showResults && "outline-[#3C9CEF] outline z-50"} ${theme && "bg-[#0F0F0F] border-[#292929] border-2    shadow-lg shadow-[#292929] text-gray-300"}`} name="" id="" />
-                <button className={`py-2 font-bold px-6 rounded-r-full border text-xl  border-slate-300 ${theme && "bg-[#292929] border-[#292929] border-2  shadow-lg shadow-[#292929]"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>
+                    className={`   pl-3  py-2 max-md:w-[200px] max-sm:w-[100px]  w-[500px] rounded-l-full ${!theme && "border-slate-300 border"} ${showResults && "outline-[#3C9CEF] outline z-50"} ${theme && "bg-[#0F0F0F] border-[#292929]   border-2 shadow-sm shadow-[#292929] text-gray-300"}`} name="" id="" />
+                <button className={`py-2 font-bold px-6 rounded-r-full border text-xl   ${!theme && "border-slate-300 border"}  ${theme && "bg-[#292929] border-[#292929] border-2  shadow-sm shadow-[#292929]"}`}><IoIosSearch className={`${theme && "text-white "}`} /></button>
 
                 {searchResults.length !== 0 && <div className={`absolute h-0 overflow-hidden sm:h-auto sm:overflow-hidden lg:h-auto md:h-auto top-11 left-2 bg-slate-50 py-6 rounded-xl z-50 pl-3
                   max-md:w-[200px] max-sm:w-[100px]  w-[500px]    ${theme && "bg-[#292929] border-[#292929] border-2  shadow-lg shadow-[#292929] text-white"}`} >

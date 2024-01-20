@@ -69,7 +69,7 @@ const Header = () => {
             </div>
             {/* theme toogler */}
             <div className=' flex gap-3 items-center pr-2'>
-                <FaUserCircle className='text-3xl' />
+                <FaUserCircle className={`text-3xl ${theme && "text-white"}`} />
                 <label className={`relative flex items-center cursor-pointer `}>
                     <input type="checkbox" value="" className="sr-only peer"
                         onChange={(e) => {

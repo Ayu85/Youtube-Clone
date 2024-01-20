@@ -23,6 +23,7 @@ const Header = () => {
     const [searchText, setSearchText] = useState('')
     const [searchResults, setSearchResults] = useState([])
     const [showResults, setShowResults] = useState(false)
+    const [showUser, setShowUser] = useState(false)
     // console.log(theme);
     useEffect(() => {
         const getSearchMatch = async () => {
@@ -77,11 +78,17 @@ const Header = () => {
                 </div>}
             </div>
             {/* theme toogler */}
-            <div className=' relative flex gap-3 items-center pr-2'>
+            <div className=' relative flex gap-3 items-center pr-2 cursor-pointer'>
                 {/* <FaUserCircle className={`text-3xl ${theme && "text-white"}`} /> */}
-                {!isAuthenticated ? <LoginButton /> : <LogoutButton />}
-                <div className='absolute text-black bg-slate-50 top-10 w-full pl-3 rounded-lg h-full'>User box</div>
-                <label className={`relative flex items-center cursor-pointer `}>
+                <div onMouseOver={() => {
+                    setShowUser(true)
+                }} onMouseLeave={() => {
+                    setShowUser(false)
+                }}> {!isAuthenticated ? <LoginButton /> : <LogoutButton />}</div>
+                {showUser && <div className={`  absolute text-black bg-slate-50 top-10 w-full pl-3 rounded-lg h-max ${!theme && "border-slate-300 border"}`}>
+                     <Profile />
+                </div>
+                }<label className={`relative flex items-center cursor-pointer `}>
                     <input type="checkbox" value="" className="sr-only peer"
                         onChange={(e) => {
                             dispatch(toogleTheme())

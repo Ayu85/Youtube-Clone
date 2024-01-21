@@ -18,7 +18,7 @@ const LiveWatchPage = () => {
             console.log(json);
             setData(json?.items[0])
         }
-        //  getVideoData();
+         getVideoData();
     }, [])
     return (
         <div className={`flex ${theme && "bg-[#0F0F0F]"}`} >

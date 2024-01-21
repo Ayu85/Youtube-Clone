@@ -14,6 +14,8 @@ import { RxCross1 } from "react-icons/rx";
 import LoginButton from './Buttons/LoginButton';
 import LogoutButton from './Buttons/LogoutButton';
 import { useAuth0 } from "@auth0/auth0-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Profile from './Profile';
 const Header = () => {
     const dispatch = useDispatch();
@@ -24,7 +26,9 @@ const Header = () => {
     const [searchResults, setSearchResults] = useState([])
     const [showResults, setShowResults] = useState(false)
     const [showUser, setShowUser] = useState(false)
-    // console.log(theme);
+    const [isLogged, setLogged] = useState(false)
+    const [showToast, setToast] = useState(false);
+
     useEffect(() => {
         const getSearchMatch = async () => {
             const raw = await fetch(SEARCH_API + searchText);
@@ -34,7 +38,9 @@ const Header = () => {
         }
         getSearchMatch();
     }, [searchText])
+    const notify = () => toast("Wow so easy!");
     // console.log(searchResults);
+   
     return (
         <div className={`flex   justify-between py-4 px-3 shadow-slate-100  shadow-lg 
          ${theme && "bg-[#0F0F0F]"}`}>
@@ -86,7 +92,7 @@ const Header = () => {
                     setShowUser(false)
                 }}> {!isAuthenticated ? <LoginButton /> : <LogoutButton />}</div>
                 {showUser && <div className={`  absolute text-black bg-slate-50 top-10 w-full pl-3 rounded-lg h-max ${!theme && "border-slate-300 border"}`}>
-                     <Profile />
+                    <Profile />
                 </div>
                 }<label className={`relative flex items-center cursor-pointer `}>
                     <input type="checkbox" value="" className="sr-only peer"
@@ -97,6 +103,7 @@ const Header = () => {
                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#3C9CEF] "></div>
                     <span className={`ms-3 text-lg font-medium  ${theme && "text-[#3C9CEF]"}`}>Dark Mode</span>
                 </label>
+               
             </div>
         </div >
     )

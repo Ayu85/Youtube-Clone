@@ -12,26 +12,26 @@ const Comments = ({ name, text, logo }) => {
 }
 const LiveChat = () => {
     const sliceComments = useSelector(store => store.comment.data)
-
+    const theme = useSelector(store => store.theme.isDark);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        // setInterval(() => {
-        //     const username = useName();
-        //     dispatch(addComment({
-        //         name: username,
-        //         text: `This is ${username} from UBER`,
-        //         logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9t4ColDnY4w2KJuyo3VQk9l41rWpG35ullBgK_N31C9lKwMVdS9qm90BkeLUKStT4oY & usqp=CAU"
-        //     }))
-        // }, 3000);
+        setInterval(() => {
+            const username = useName();
+            dispatch(addComment({
+                name: username,
+                text: `This is ${username} from UBER`,
+                logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm9t4ColDnY4w2KJuyo3VQk9l41rWpG35ullBgK_N31C9lKwMVdS9qm90BkeLUKStT4oY & usqp=CAU"
+            }))
+        }, 3000);
 
-        // setInterval(() => {
-        //     dispatch(removeComment())
-        // }, 1000)
+        setInterval(() => {
+            dispatch(removeComment())
+        }, 9000)
 
     }, [])
     return (
-        <div className='flex flex-col-reverse'>
+        <div className={`flex flex-col-reverse `}>
             {
                 sliceComments.map((items) => {
                     return <Comments   {...items} />
